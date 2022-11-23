@@ -4,11 +4,11 @@ WORKDIR /app
 FROM base as build
 COPY package.json ./
 COPY yarn.lock ./
-COPY src src
+COPY src ./src
 RUN yarn install --frozen-lockfile
-RUN yarn build
+RUN yarn run build
 
-FROM deploy as build
+FROM build as deploy
 COPY --from=build package.json ./
 COPY --from=build /app/dist ./
 RUN yarn install --prod=true
