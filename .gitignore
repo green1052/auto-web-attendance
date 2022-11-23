@@ -192,6 +192,3 @@ dist
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-# 프로젝트 제외 경로
-/.yarn/
-/.pnp.cjs
