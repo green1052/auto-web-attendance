@@ -40,7 +40,6 @@ jobs:
         with:
           target: deploy
           push: true
-          outputs: type=tar,dest=docker.tar
           tags: |
             ghcr.io/green1052/auto-web-attendance:latest
             ghcr.io/green1052/auto-web-attendance:${{github.ref_name}}
