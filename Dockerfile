@@ -1,4 +1,5 @@
 FROM node:18 as base
+RUN npm install -g yarn
 WORKDIR /app
 
 FROM base as build
