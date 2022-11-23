@@ -31,6 +31,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
+          target: deploy
           outputs: type=tar,dest=docker.tar
           tags: |
             green1052/auto-web-attendance:latest
