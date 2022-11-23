@@ -4,7 +4,8 @@
     "packageManager": "yarn@3.3.0",
     "scripts": {
         "build": "ttsc",
-        "docker": "run build"
+        "docker": "run build",
+        "test": "ts-node -C ttypescript src/index.ts"
     },
     "devDependencies": {
         "@types/luxon": "^3.1.0",

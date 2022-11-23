@@ -46,8 +46,6 @@ jobs:
           platforms: linux/amd64,linux/arm64
 
       - name: Release
-        uses: "marvinpinto/action-automatic-releases@latest"
+        uses: softprops/action-gh-release@v1
         with:
-          repo_token: "${{secrets.GITHUB_TOKEN}}"
-          prerelease: false
           files: build.zip
