@@ -6,6 +6,7 @@ COPY package.json ./
 COPY yarn.lock ./
 COPY src src
 RUN yarn install --frozen-lockfile
+RUN yarn build
 
 FROM deploy as build
 COPY --from=build package.json ./
