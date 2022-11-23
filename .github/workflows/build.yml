@@ -34,7 +34,7 @@ jobs:
           outputs: type=tar,dest=docker.tar
           tags: |
             green1052/auto-web-attendance:latest
-            green1052/auto-web-attendance:latest:${{github.ref_name}}
+            green1052/auto-web-attendance:${{github.ref_name}}
           platforms: linux/amd64,linux/arm64
 
       - name: Release
