@@ -3,6 +3,7 @@ WORKDIR /app
 
 FROM base as build
 COPY package.json ./
+COPY tsconfig.json ./
 COPY src ./src
 RUN yarn install
 RUN yarn run build
