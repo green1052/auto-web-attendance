@@ -15,7 +15,7 @@ jobs:
           node-version: 18
 
       - name: Install
-        run: yarn install --immutable --immutable-cache
+        run: yarn
 
       - name: Build
         run: |
@@ -49,3 +49,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: build.zip
+          generate_release_notes: true

@@ -12,7 +12,6 @@ FROM build as deploy
 COPY --from=build /app/package.json ./
 COPY --from=build /app/dist ./
 RUN yarn install --prod=true
-ENV NODE_ENV=production
 
 VOLUME [ "/app/config" ]
 
