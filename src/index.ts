@@ -1,5 +1,5 @@
 import fs from "fs";
-import TSON from "typescript-json";
+import TSON from "typia";
 import * as process from "process";
 import * as path from "path";
 import axios, {AxiosInstance} from "axios";
@@ -14,7 +14,7 @@ export interface Module {
 
 interface ModuleAuth {
     type: "cookie" | "password";
-    value: string;
+    value: string | { username: string; password: string; };
 }
 
 interface ModuleResult {
@@ -27,14 +27,16 @@ interface Site {
     name: string;
     timezone?: string;
     cron?: string;
+    retry?: number;
     cookie?: string;
-    username?: number;
+    username?: string;
     password?: string;
 }
 
 interface Config {
     timezone: string;
     cron: string;
+    retry: number;
     sites: Site[];
 }
 
@@ -58,12 +60,6 @@ for (const site of fs.readdirSync(basePath).filter(file => file.endsWith(".js") 
     console.log(`[Module]: ${func.name} Loaded`);
 }
 
-const client = axios.create({
-    headers: {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; rv:107.0) Gecko/20100101 Firefox/107.0"
-    }
-});
-
 console.log();
 
 for (const site of config.sites) {
@@ -86,15 +82,41 @@ for (const site of config.sites) {
     }
 
     cron.schedule(site.cron ?? config.cron, async () => {
-        const result = await module.start(client, {
-            type: auth,
-            value: auth === "cookie" ? site.cookie! : site.password!
+        const client = axios.create({
+            headers: {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:107.0) Gecko/20100101 Firefox/107.0"
+            }
         });
+
+        const start = async () => {
+            return await module.start(client, {
+                type: auth,
+                value: auth === "cookie" ? site.cookie! : {username: site.username!, password: site.password!}
+            });
+        };
+
+        const result = await start();
 
         if (result.success) {
             console.log(`[${module.name}]: ${result.message ?? "Success the task"}`);
+            return;
         } else {
-            console.error(`[${module.name}]: ${result.error ?? "Failed the task"}`);
+            console.error(`[${module.name}]: ${result.message ?? "Failed the task"}`);
+        }
+
+        const retry = site.retry ?? config.retry;
+
+        if (retry <= 0) return;
+
+        for (let i = 1; i <= retry; i++) {
+            const result = await start();
+
+            if (result.success) {
+                console.log(`[${module.name}]: ${result.message ?? "Success the task"} (${i}/${retry})`);
+                break;
+            } else {
+                console.error(`[${module.name}]: ${result.message ?? "Failed the task"} (${i}/${retry})`);
+            }
         }
     }, {
         timezone: site.timezone ?? config.timezone

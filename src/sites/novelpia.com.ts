@@ -13,7 +13,7 @@ export default {
     async start(client, auth) {
         client.defaults.baseURL = "https://novelpia.com";
         client.defaults.headers.common = {
-            "Cookie": auth.value
+            "Cookie": auth.value as string
         };
 
         async function getNovelList(): Promise<NovelList[]> {
@@ -74,7 +74,7 @@ export default {
             try {
                 await client.get(url);
                 return true;
-            } catch (e) {
+            } catch {
                 return false;
             }
         }

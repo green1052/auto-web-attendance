@@ -80,10 +80,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.11.9":
-  version: 18.11.9
-  resolution: "@types/node@npm:18.11.9"
-  checksum: cc0aae109e9b7adefc32eecb838d6fad931663bb06484b5e9cbbbf74865c721b03d16fd8d74ad90e31dbe093d956a7c2c306ba5429ba0c00f3f7505103d7a496
+"@types/node@npm:^18.11.15":
+  version: 18.11.15
+  resolution: "@types/node@npm:18.11.15"
+  checksum: cae8692a5cee0316f93ee0342237eb921f70c51afb37c661c711a925a4642654ae7e404c5a80899d481c0cfaff3a6891ef04bacd330a2e72734192bfc91dc2d8
   languageName: node
   linkType: hard
 
@@ -122,28 +122,28 @@ __metadata:
   resolution: "auto-web-attendance@workspace:."
   dependencies:
     "@types/luxon": ^3.1.0
-    "@types/node": ^18.11.9
+    "@types/node": ^18.11.15
     "@types/node-cron": ^3.0.6
-    axios: ^1.2.0
+    axios: ^1.2.1
     cheerio: ^1.0.0-rc.12
     iconv-lite: ^0.6.3
-    luxon: ^3.1.0
+    luxon: ^3.1.1
     node-cron: ^3.0.2
     ts-node: ^10.9.1
-    ttypescript: ^1.5.13
-    typescript: 4.8.4
-    typescript-json: ^3.3.36
+    ttypescript: ^1.5.15
+    typescript: ^4.9.4
+    typia: ^3.4.7
   languageName: unknown
   linkType: soft
 
-"axios@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "axios@npm:1.2.0"
+"axios@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "axios@npm:1.2.1"
   dependencies:
     follow-redirects: ^1.15.0
     form-data: ^4.0.0
     proxy-from-env: ^1.1.0
-  checksum: f08ce214e957dfde45b837f8d3c7861424608fb7df32faa638835e338782a9f4c0b05074e92e0e8dcca3a1e6250112fbbe1b15a6b21104da633d84745bbb79cc
+  checksum: c4dc4e119064c9aed09a3de309bedb797a139a6fb372223aafe3e0c10a7d4a14e4d3e9c9d309467fadb9d2b490b891ee3df96ef5b55716bb971910466ff9f0c5
   languageName: node
   linkType: hard
 
@@ -345,10 +345,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"luxon@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "luxon@npm:3.1.0"
-  checksum: f8a850b759ba7a2e009d904c522ed7bc264bf4add57578f8948e52a0ed96b627b025b5aad8032295b570ae19fac41f0ffab91bdb128715fb0cc020798a7ba886
+"luxon@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "luxon@npm:3.1.1"
+  checksum: 388fb35d3c51a19d8b305a3338e7e74634b08562e7d2f9ed5c05a7f4bc9ee1c1ab6a2546b6d9c4c104516b24043757d65f5f3fe3d78b206fbf55a9586ab62230
   languageName: node
   linkType: hard
 
@@ -504,9 +504,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ttypescript@npm:^1.5.13":
-  version: 1.5.13
-  resolution: "ttypescript@npm:1.5.13"
+"ttypescript@npm:^1.5.15":
+  version: 1.5.15
+  resolution: "ttypescript@npm:1.5.15"
   dependencies:
     resolve: ">=1.9.0"
   peerDependencies:
@@ -515,34 +515,39 @@ __metadata:
   bin:
     ttsc: bin/tsc
     ttsserver: bin/tsserver
-  checksum: bd97f058520ebd6183446b2100bfc714c400455e2195c3711d00c3407521d99098a4a204f16200c14a115cd78a5005d4a790bf7fb73a1b21a513573291a9c1d0
+  checksum: 0328578050f08f9d12e6732a9fe71e93cc693ed5e825aefb7f4ba142d4d3d6912caa59a723f775de89cd066c8e609665fd5a7ccfa3b69fb3456c7f24d695db90
   languageName: node
   linkType: hard
 
-"typescript-json@npm:^3.3.36":
-  version: 3.3.36
-  resolution: "typescript-json@npm:3.3.36"
-  checksum: bc944b630032270726438812384daf86853baca9ed18f962db2edd40f400dfa82dd7cb25c1c3d490efd1680a20c1b7326247ca02a9af26da2323e9c69edc7b70
-  languageName: node
-  linkType: hard
-
-"typescript@npm:4.8.4":
-  version: 4.8.4
-  resolution: "typescript@npm:4.8.4"
+"typescript@npm:^4.9.4":
+  version: 4.9.4
+  resolution: "typescript@npm:4.9.4"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 3e4f061658e0c8f36c820802fa809e0fd812b85687a9a2f5430bc3d0368e37d1c9605c3ce9b39df9a05af2ece67b1d844f9f6ea8ff42819f13bcb80f85629af0
+  checksum: e782fb9e0031cb258a80000f6c13530288c6d63f1177ed43f770533fdc15740d271554cdae86701c1dd2c83b082cea808b07e97fd68b38a172a83dbf9e0d0ef9
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.8.4#~builtin<compat/typescript>":
-  version: 4.8.4
-  resolution: "typescript@patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=0102e9"
+"typescript@patch:typescript@^4.9.4#~builtin<compat/typescript>":
+  version: 4.9.4
+  resolution: "typescript@patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=d73830"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 301459fc3eb3b1a38fe91bf96d98eb55da88a9cb17b4ef80b4d105d620f4d547ba776cc27b44cc2ef58b66eda23fe0a74142feb5e79a6fb99f54fc018a696afa
+  checksum: 37f6e2c3c5e2aa5934b85b0fddbf32eeac8b1bacf3a5b51d01946936d03f5377fe86255d4e5a4ae628fd0cd553386355ad362c57f13b4635064400f3e8e05b9d
+  languageName: node
+  linkType: hard
+
+"typia@npm:^3.4.7":
+  version: 3.4.7
+  resolution: "typia@npm:3.4.7"
+  peerDependencies:
+    ttypescript: ">= 1.5.15"
+    typescript: ">= 4.5.2"
+  bin:
+    typia: lib/executable/typia.js
+  checksum: 7e0865f4f7cca291b7445f79a2f4137b5c88b1af622a41cc5efef14f816b6e61e45ed3568c1ecd136b50c5c7b437969d2d5f7bbb0da89e5bbe065f4432e1800d
   languageName: node
   linkType: hard
 

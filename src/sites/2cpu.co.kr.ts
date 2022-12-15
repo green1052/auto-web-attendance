@@ -12,12 +12,19 @@ export default {
     name: "2cpu.co.kr",
     auth: "cookie",
     async start(client, auth) {
+        client.defaults.baseURL = "https://www.2cpu.co.kr";
         client.defaults.headers.common = {
-            "Cookie": auth.value
+            "Cookie": auth.value as string
         };
 
         try {
-            const response = await client.post("https://www.2cpu.co.kr/plugin/attendance/attendance_update.php", `s_date=${DateTime.now().setZone("Asia/Seoul").toFormat("yyyy-MM-dd")}&currentId=&at_type=${getRandomInt(1, 3)}&at_memo=%BF%C0%B4%C3%C0%BA+%B2%C0%C0%CC%B1%E6%C5%D7%B4%D9%21%21`, {
+            const params = new URLSearchParams();
+            params.set("s_date", DateTime.now().setZone("Asia/Seoul").toFormat("yyyy-MM-dd"));
+            params.set("currentId", "");
+            params.set("at_type", getRandomInt(1, 3).toString());
+            params.set("at_memo", "%BF%C0%B4%C3%C0%BA+%B2%C0%C0%CC%B1%E6%C5%D7%B4%D9%21%21");
+
+            const response = await client.post("/plugin/attendance/attendance_update.php", params, {
                 responseType: "arraybuffer"
             });
 
