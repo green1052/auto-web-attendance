@@ -22,7 +22,7 @@ export default {
             params.set("s_date", DateTime.now().setZone("Asia/Seoul").toFormat("yyyy-MM-dd"));
             params.set("currentId", "");
             params.set("at_type", getRandomInt(1, 3).toString());
-            params.set("at_memo", "%BF%C0%B4%C3%C0%BA+%B2%C0%C0%CC%B1%E6%C5%D7%B4%D9%21%21");
+            params.set("at_memo", "2CPU 최고!!");
 
             const response = await client.post("/plugin/attendance/attendance_update.php", params, {
                 responseType: "arraybuffer"
@@ -30,10 +30,23 @@ export default {
 
             const decoded = iconv.decode(response.data, "EUC-KR");
 
-            return {
-                success: true,
-                message: /alert\('(.*)'\);/g.exec(decoded)?.[1] ?? "Failed to parse message but attendance succeeded."
-            };
+            try {
+                const params = new URLSearchParams();
+                params.set("subject", "no-image");
+                params.set("content", "출석");
+
+                await client.post("/bbs/ajax.filter.php");
+
+                return {
+                    success: true,
+                    message: /alert\('(.*)'\);/g.exec(decoded)?.[1] ?? "Failed to parse message but attendance succeeded."
+                };
+            } catch (e) {
+                return {
+                    success: false,
+                    error: e
+                }
+            }
         } catch (e) {
             return {
                 success: false,

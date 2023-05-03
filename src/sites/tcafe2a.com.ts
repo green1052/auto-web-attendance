@@ -27,10 +27,7 @@ export default {
             params.set("secdoe", secdoe);
             params.set("proctype", "gogogo");
 
-            const response2 = await client.post("/attendance/selfattend2_p.php", {
-                secdoe,
-                proctype: "gogogo"
-            });
+            const response2 = await client.post("/attendance/selfattend2_p.php", params);
 
             const $2 = cheerio.load(response2.data);
 
@@ -41,7 +38,7 @@ export default {
         } catch (e) {
             return {
                 success: false,
-                message: e
+                error: e
             }
         }
     }

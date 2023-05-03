@@ -101,7 +101,7 @@ for (const site of config.sites) {
             console.log(`[${module.name}]: ${result.message ?? "Success the task"}`);
             return;
         } else {
-            console.error(`[${module.name}]: ${result.message ?? "Failed the task"}`);
+            console.error(`[${module.name}]: ${result.error ?? "Failed the task"}`);
         }
 
         const retry = site.retry ?? config.retry;
@@ -115,7 +115,7 @@ for (const site of config.sites) {
                 console.log(`[${module.name}]: ${result.message ?? "Success the task"} (${i}/${retry})`);
                 break;
             } else {
-                console.error(`[${module.name}]: ${result.message ?? "Failed the task"} (${i}/${retry})`);
+                console.error(`[${module.name}]: ${result.error ?? "Failed the task"} (${i}/${retry})`);
             }
         }
     }, {
