@@ -66,21 +66,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/luxon@npm:^3.3.0":
+"@types/luxon@npm:^3.1.0":
   version: 3.3.0
   resolution: "@types/luxon@npm:3.3.0"
   checksum: f7e3a89fc3ca404fbc3ea538653ed6860bc28f570a8c4d6d24449b89b9b553b7d6ad6cc94a9e129c5b8c9a2b97f0c365b3017f811e59c4a859a9c219a1c918e0
   languageName: node
   linkType: hard
 
-"@types/node-cron@npm:^3.0.7":
+"@types/node-cron@npm:^3.0.6":
   version: 3.0.7
   resolution: "@types/node-cron@npm:3.0.7"
   checksum: 1a37bd32efe55a285b08299ef4fb8b11edaa1c0d4ef5d541611a9a4a631b4d5db3dbb5b02321ce04b882d4d07f4b3a05c2ff5fd70ce4614d7f8abd45d2f28da2
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.16.3":
+"@types/node@npm:^18.11.15":
   version: 18.16.3
   resolution: "@types/node@npm:18.16.3"
   checksum: 816b39d45b05ebdc6f362b630970df3f6d82f71d418a2555353522f4eeeb078fa201de5299f02c09a09faa975e43b2745fe19c263d44069f87ddf37d6c37b717
@@ -153,22 +153,22 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "auto-web-attendance@workspace:."
   dependencies:
-    "@types/luxon": ^3.3.0
-    "@types/node": ^18.16.3
-    "@types/node-cron": ^3.0.7
-    axios: ^1.4.0
+    "@types/luxon": ^3.1.0
+    "@types/node": ^18.11.15
+    "@types/node-cron": ^3.0.6
+    axios: ^1.2.1
     cheerio: ^1.0.0-rc.12
     iconv-lite: ^0.6.3
-    luxon: ^3.3.0
+    luxon: ^3.1.1
     node-cron: ^3.0.2
     ts-node: ^10.9.1
     ttypescript: ^1.5.15
-    typescript: ^5.0.4
-    typia: ^3.8.4
+    typescript: ^4.9.4
+    typia: ^3.4.7
   languageName: unknown
   linkType: soft
 
-"axios@npm:^1.4.0":
+"axios@npm:^1.2.1":
   version: 1.4.0
   resolution: "axios@npm:1.4.0"
   dependencies:
@@ -653,7 +653,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"luxon@npm:^3.3.0":
+"luxon@npm:^3.1.1":
   version: 3.3.0
   resolution: "luxon@npm:3.3.0"
   checksum: 50cf17a0dc155c3dcacbeae8c0b7e80db425e0ba97b9cbdf12a7fc142d841ff1ab1560919f033af46240ed44e2f70c49f76e3422524c7fc8bb8d81ca47c66187
@@ -1017,27 +1017,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.0.4":
-  version: 5.0.4
-  resolution: "typescript@npm:5.0.4"
+"typescript@npm:^4.9.4":
+  version: 4.9.5
+  resolution: "typescript@npm:4.9.5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 82b94da3f4604a8946da585f7d6c3025fff8410779e5bde2855ab130d05e4fd08938b9e593b6ebed165bda6ad9292b230984f10952cf82f0a0ca07bbeaa08172
+  checksum: ee000bc26848147ad423b581bd250075662a354d84f0e06eb76d3b892328d8d4440b7487b5a83e851b12b255f55d71835b008a66cbf8f255a11e4400159237db
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^5.0.4#~builtin<compat/typescript>":
-  version: 5.0.4
-  resolution: "typescript@patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"
+"typescript@patch:typescript@^4.9.4#~builtin<compat/typescript>":
+  version: 4.9.5
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=289587"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: d26b6ba97b6d163c55dbdffd9bbb4c211667ebebc743accfeb2c8c0154aace7afd097b51165a72a5bad2cf65a4612259344ff60f8e642362aa1695c760d303ac
+  checksum: 1f8f3b6aaea19f0f67cba79057674ba580438a7db55057eb89cc06950483c5d632115c14077f6663ea76fd09fce3c190e6414bb98582ec80aa5a4eaf345d5b68
   languageName: node
   linkType: hard
 
-"typia@npm:^3.8.4":
+"typia@npm:^3.4.7":
   version: 3.8.4
   resolution: "typia@npm:3.8.4"
   dependencies:
